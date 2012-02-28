@@ -9,8 +9,7 @@
 
 
 // Wait until the DOM is ready.
-window.addEventListener("DOMContentLoaded", function(){
-    
+   $(function(){ 
     // getElementById Function
     function $(x) {
         var theElement = document.getElementById(x);
@@ -349,6 +348,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //var clearCar = $('clearCar');
     //clearCar.addEventListener("click", clearLocal);
     var save = $('submit');
-    save.addEventListener("click", validate);    
-
-});
+    save.addEventListener("click", validate);
+    
+   });
+   
