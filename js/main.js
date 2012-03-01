@@ -9,7 +9,9 @@
 
 
 // Wait until the DOM is ready.
-   $(function(){ 
+   $(function(){
+    
+    
     // getElementById Function
     function $(x) {
         var theElement = document.getElementById(x);
@@ -19,7 +21,7 @@
     // Create Select field element and populate it with options
     function makeManufacturers(){
         var formTag = document.getElementsByTagName("form"),  // Form tag is an array.
-            selectLi = $('select'),
+            selectLi = $('#select'),
             makeSelect = document.createElement('select');
             makeSelect.setAttribute("id", "manufacturer");
         for(var i=0, j=carMakes.length; i<j; i++) {
@@ -42,28 +44,28 @@
         }   
     }
     
-    function getCheckBoxValue () {
-        if ($('synthetic').checked) {
+    var getCheckBoxValue = function() {
+        if ($('#synthetic').checked) {
             syntheticValue = true;
         } else {
             syntheticValue = false;
         }
     }
     
-    function toggleControls(n) {
+    var toggleControls = function(n) {
         switch(n) {
             case "on":
-                $('carRegister').style.display = "none";
-                $('clearCar').style.display = "inline";
-                $('displayCar').style.display = "none";
-                $('addNew').style.display = "inline";
+                $('#carRegister').style.display = "none";
+                $('#clearCar').style.display = "inline";
+                $('#displayCar').style.display = "none";
+                $('#addNew').style.display = "inline";
                 break;
             case "off":
-                $('carRegister').style.display = "block";
-                $('clearCar').style.display = "inline";
-                $('displayCar').style.display = "inline";
-                $('addNew').style.display = "none";
-                $('items').style.display = "none";           
+                $('#carRegister').style.display = "block";
+                $('#clearCar').style.display = "inline";
+                $('#displayCar').style.display = "inline";
+                $('#addNew').style.display = "none";
+                $('#items').style.display = "none";           
                 break;
             default:
         }
@@ -86,18 +88,19 @@
         // Gather up form field values and store them in an object.
         // Oject properties contain array with the form label and input value.
         var item                = {};
-            item.year           = ["Car Year:", $('year').value];
-            item.manufacturer    = ["Make:", $('manufacturer').value];
-            item.model          = ["Model:", $('model').value];
+            item.year           = ["Car Year:", $('#year').value];
+            item.manufacturer    = ["Make:", $('#manufacturer').value];
+            item.model          = ["Model:", $('#model').value];
             item.engine         = ["Engine Size:", engineValue];
-            item.lastOilDate    = ["Date of last Oil Change:", $('lastOilDate').value];
+            item.lastOilDate    = ["Date of last Oil Change:", $('#lastOilDate').value];
             item.synthetic      = ["Synthetic Oil:", syntheticValue];
-            item.oilDuration    = ["Oil Change Duration (miles):", $('oilDuration').value];
-            item.notes          = ["Notes:", $('notes').value];
+            item.oilDuration    = ["Oil Change Duration (miles):", $('#oilDuration').value];
+            item.notes          = ["Notes:", $('#notes').value];
         // Save data to Local Storage:  Use Stringify to convert our object to a string.
         localStorage.setItem(id, JSON.stringify(item));
         
         alert("Car Registered!");
+        console.log (localStorage);
     };
 
     function getData () {
@@ -113,7 +116,7 @@
         var makeList = document.createElement('ul');
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
-        $('items').style.display = "block";
+        $('#items').style.display = "block";
         for(var i= 0, len=localStorage.length; i < len; i++) {
             var makeLi = document.createElement('ul');
             var linksLi = document.createElement ('ul');
@@ -233,28 +236,28 @@
         toggleControls("off");
         
         // populate the form fields with the current Local Storage values.
-        $('year').value = item.year[1];
-        $('manufacturer').value = item.manufacturer[1];
-        $('model').value = item.model[1];
+        $('#year').value = item.year[1];
+        $('#manufacturer').value = item.manufacturer[1];
+        $('#model').value = item.model[1];
         var radios = document.forms[0].engine;
         for (var i=0; i < radios.length; i++) {
             if (radios[i].value == item.engine[1]) {
                 radios[i].setAttribute("checked", "checked");
             }
         }
-        $('lastOilDate').value = item.lastOilDate[1];
+        $('#lastOilDate').value = item.lastOilDate[1];
         if (item.synthetic[1] === true) {
-            $('synthetic').setAttribute("checked", "checked");            
+            $('#synthetic').setAttribute("checked", "checked");            
         }
         
-        $('oilDuration').value = item.oilDuration[1];
-        $('notes').value = item.notes[1];
+        $('#oilDuration').value = item.oilDuration[1];
+        $('#notes').value = item.notes[1];
         
         // Removing the initial Listener from the input 'register vehicle' button.
         save.removeEventListener("click", storeData);
         // Change Submit Button Value to Edit Button.
-        $('submit').value = "Edit Vehicle";
-        var editSubmit = $('submit');
+        $('#submit').value = "Edit Vehicle";
+        var editSubmit = $('#submit');
         //  Save the key value established in this function as a property of the editSubmit event
         //  so we can use that value when we save the data we edited.
         editSubmit.addEventListener("click", validate);
@@ -285,9 +288,9 @@
     
     function validate (e) {
         // Define the elements we want to check.
-        var getYear = $('year');
-        var getManufacturer = $('manufacturer');
-        var getLastOilDate = $('lastOilDate');
+        var getYear = $('#year');
+        var getManufacturer = $('#manufacturer');
+        var getLastOilDate = $('#lastOilDate');
         
         // Reset Error Mesages.
         
@@ -338,16 +341,16 @@
     //var carMakes = ["--Choose a Car--", "Acura", "BMW","Chevrolet", "Dodge", "Ford"],
         //engineValue,
         //syntheticValue = false,
-        errMsg = $('errors');
+        errMsg = $('#errors');
     //makeManufacturers();
     
     
     // Set Link & Submit Click Events
-    //var displayCar = $('displayCar');
+    //var displayCar = $('#displayCar');
     //displayCar.addEventListener("click", getData);
-    //var clearCar = $('clearCar');
+    //var clearCar = $('#clearCar');
     //clearCar.addEventListener("click", clearLocal);
-    var save = $('submit');
+    var save = $('#submit');
     save.addEventListener("click", validate);
     
    });
