@@ -19,7 +19,7 @@
     }
  /*   
     // Create Select field element and populate it with options
-    function makeManufacturers(){
+    var makeManufacturers = function (){
         var formTag = document.getElementsByTagName("form"),  // Form tag is an array.
             selectLi = $('#select'),
             makeSelect = document.createElement('select');
@@ -35,7 +35,7 @@
     };
  */    
     // Find value of selected radio button.
-    function getSelectedRadio() {
+    var getSelectedRadio = function () {
         var radios = document.forms[0].engine;
         for (var i=0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -44,7 +44,7 @@
         }   
     }
     
-    var getCheckBoxValue = function() {
+    var getCheckBoxValue = function () {
         if ($('#synthetic').checked) {
             syntheticValue = true;
         } else {
@@ -73,7 +73,7 @@
     }
     // Save data to local storage for one item = localStorage.setItem("Key","data");
 
-    function storeData (key) {
+    var storeData = function (key) {
         //  If there is no key, this is a brand new item and a key needs to be assigned.
         if (!key) {
             var id                  = Math.floor(Math.random()*100000001);
@@ -103,7 +103,7 @@
         console.log (localStorage);
     };
 
-    function getData () {
+    var getData = function () {
         toggleControls ("on");
         if(localStorage.length === 0) {
             autoFillData();
@@ -141,7 +141,7 @@
     }
     
     // Get the Image to represent the proper Manfuacturer.
-    function getImage(manName, makeSubList){
+    var getImage = function(manName, makeSubList){
         var imageLi = document.createElement('ul');
         makeSubList.appendChild(imageLi);
         var newImg = document.createElement('img');
@@ -149,7 +149,7 @@
         imageLi.appendChild(newImg);
     }
     // JSON Object Which will auto populate local storage.
-    function autoFillData() {
+    var autoFillData = function () {
         alert ("Filling JSON Data NOW!");
         var json = {
             "vehicle1": {
@@ -201,7 +201,7 @@
     }
     // Make Item Links
    // Create edit/delete links for each Local Storage Item.
-    function makeItemLinks(key, linksLi) {
+    var makeItemLinks = function (key, linksLi) {
         // add edit single item link
         var editLink = document.createElement('a');
         editLink.href = "#";
@@ -227,7 +227,7 @@
     }
     
     // Edit Item Function
-    function editItem () {
+    var editItem = function () {
         //Grab the data of the edited item from local storage
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
@@ -265,7 +265,7 @@
     }
     // Delete Item function
     
-    function deleteItem () {
+    var deleteItem = function () {
         var ask = confirm ("Are you sure you want to REMOVE this vehicle?");
         if (ask) {
             localStorage.removeItem(this.key);
@@ -275,7 +275,7 @@
             alert("Item was NOT REMOVED!");
         }
     }
-    function clearLocal (){
+    var clearLocal = function (){
         if (localStorage.length === 0) {
             alert("There is no data to clear!");
         } else {
@@ -286,7 +286,7 @@
         } 
     }
     
-    function validate (e) {
+    var validate = function (e) {
         // Define the elements we want to check.
         var getYear = $('#year');
         var getManufacturer = $('#manufacturer');
