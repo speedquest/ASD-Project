@@ -11,18 +11,30 @@
 // Wait until the DOM is ready.
    $(function(){
     
-    // save data from form
+    
+    $('#noideawhatgoeshere').live('pageinit', function () {
+
+        var addform = $('#addPage');
+        var errorslink = $('#errors');
+        var formSave = $('#submit');
+        var theElement = $('#insertid');
+        
+        // save data from form
         formSave.on('click', function(){
-        ciform.validate({
-            submitHandler: function(){
-                var data = ciform.serializeArray();
-                console.log(data);
-                storeData(data);
-                $.mobile.changePage($('#addPage'));
-            }
+        addform.validate({
+        
+        submitHandler: function(){
+        var data = addform.serializeArray();
+        console.log(data);
+        storeData(data);
+        $.mobile.changePage($('#home'));
+        }
+        
         });
-        
-        
+
+});
+    
+    
     // getElementById Function
     function $(x) {
         var theElement = document.getElementById(x);
