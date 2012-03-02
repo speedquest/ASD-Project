@@ -11,7 +11,18 @@
 // Wait until the DOM is ready.
    $(function(){
     
-    
+    // save data from form
+        formSave.on('click', function(){
+        ciform.validate({
+            submitHandler: function(){
+                var data = ciform.serializeArray();
+                console.log(data);
+                storeData(data);
+                $.mobile.changePage($('#addPage'));
+            }
+        });
+        
+        
     // getElementById Function
     function $(x) {
         var theElement = document.getElementById(x);
