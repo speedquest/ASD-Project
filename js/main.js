@@ -350,8 +350,8 @@
     //displayCar.addEventListener("click", getData);
     //var clearCar = $('#clearCar');
     //clearCar.addEventListener("click", clearLocal);
-    var save = $('#submit');
-    save.addEventListener("click", validate);
+    // var save = $('#submit');
+    // save.addEventListener("click", validate);
     
    });
    
