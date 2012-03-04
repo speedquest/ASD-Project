@@ -80,6 +80,8 @@ March 2,2012
 	}
     });
     
+    
+    
     // EDIT MY DATA!!
     
     var editItem = function (id) {
@@ -153,15 +155,25 @@ March 2,2012
     
     // CLEAR MY DATA!
     
+   //Clear Local Storage
+    var clearForm = $('#clearCar');
+    
+    clearForm.on('click', function() {
+	clearLocal();
+	});
+    
+    // Clear local storage.
     var clearLocal = function() {
-	if (localStorage.length === 0) {
-	    alert("There is no data to clear.");
+    if (localStorage.length === 0) {
+	alert("There is no data to clear");
 	} else {
 	    localStorage.clear();
-	    alert("All data has been removed from local storage!");
+	    alert("All vehicles have been deleted");
 	    window.location.reload();
-	    return false;
-	}
+	    }
+    return false;
     }
+
+
 
 });
