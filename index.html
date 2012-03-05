@@ -67,7 +67,7 @@ HTML FILE
 		<div data-role="content" align="center">
 		    <div data-role="collapsible" >
 			<h2>Vehicle List</h2>
-			 <div id="#viewjson"></div>
+			 <div id="#displayLink"></div>
 		    </div>
 		</div>
 	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
@@ -146,12 +146,13 @@ HTML FILE
 				</form>
 				
 				<!-- Display Data  -->
-				<div><a href="#" id="displayLink" data-icon="search">Display Data</a></div>
+				<div>
+					<a href="#" id="displayLink" data-icon="search">Display Data</a></div>
 				<div id="list"></div>
 				
 				<!-- Clear Local Storage -->
-				<div id="clearlocal">
-					<p id="clear"><a href="#" onclick="clearCar">Clear Local Storage</a></p>
+				<div id="clearCar">
+					<p id="clear"><a href="#" onclick="clearCar(); location.reload();">Clear Local Storage</a></p>
 				</div>
 			</div>
 		</div>
@@ -159,19 +160,6 @@ HTML FILE
                 <div data-role="footer" data-theme="d" data-position="fixed" align="center">
 			<a href="#home" data-icon="home">Home</a>
                 </div>
-	</div>
-	
-	<!-- Clear DATABASE NOT USED YET -->
-	<div data-role="page" id="clearCar">
-	    <div data-role="header" data-theme="d" data-position="fixed">
-		<center><img src="images/logbook_header_logo.png"></center>
-		<h1>Clearing Cars</h1>
-		<img src="images/construction.gif">
-	    </div>
-	    <!-- Footer, which includes a HOME page button/icon -->
-	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
-		<a href="#home" data-icon="home">Home</a>
-	    </div>
 	</div>
 	
 	<!-- OIL CHANGE PAGE -->                
