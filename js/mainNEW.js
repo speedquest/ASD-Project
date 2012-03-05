@@ -115,7 +115,7 @@ March 2,2012
 	var itemList = $('#list').css('display', 'none');
     
 	// when clicking editItem button
-	$('#edit-item').live('click', function clickEdit() {
+	$('#editItem').live('click', function clickEdit() {
 	    var year = $('#year').val();
 	    var manufacturer = $('#manufacturer').val();
 	    var model = $('#model').val();
