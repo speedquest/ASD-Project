@@ -70,20 +70,21 @@ HTML FILE
 	</div>
 	
 	<!-- INSPECT PAGE -->
-	<div data-role="page" id="inspect">
+	<div data-role="page" id="inspectPage">
 	    <div data-role="header" data-position="fixed">
 		<center><img src="images/logbook_header_logo.png"></center>
 		<h1>Inspect Vehicles</h1>
 	    </div>
-		<div data-role="content" align="center">
-		    <div data-role="collapsible" >
-			<h2>Vehicle List</h2>
-			 <a href="#" id="displayLink" data-icon="search">Display Data</a></div>
-		    </div>
-		</div>
+		<!-- <div data-role="content" align="center">
+			<div data-role="collapsible" >
+			    <h2>Vehicle List</h2>
+			     <a href="#" id="displayLink" data-icon="search">Display Data</a></div>
+			</div> 
+		</div> -->
 	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
 		<a href="#home" data-icon="home">Home</a>
 	    </div>
+
 	</div>
 	
 	<!-- ADD VEHICLE PAGE -->
@@ -168,12 +169,13 @@ HTML FILE
 				
 				<!-- Display Data  -->
 				<div>
-					<a href="#" id="displayLink" data-icon="search">Display Data</a></div>
+					<input type="button" id="displayLink" value="Display Data"/>
+				</div>
 				<div id="list"></div>
 				
 				<!-- Clear Local Storage -->
 				<div id="clearCar">
-					<p id="clear"><a href="#" onclick="clearLocal(); location.reload();">Clear Local Storage</a></p>
+					<input type="button" id="clear" onclick="clearLocal(); location.reload();" value="Clear Local Storage"/>
 				</div>
 			</div>
 		</div>
