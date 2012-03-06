@@ -3,8 +3,8 @@
 Nick Weil
 ASD
 March 2012
-Project 1
-March 2,2012
+Project 2
+March 8,2012
 
 HTML FILE
 -->
@@ -67,7 +67,7 @@ HTML FILE
 		<div data-role="content" align="center">
 		    <div data-role="collapsible" >
 			<h2>Vehicle List</h2>
-			 <div id="#displayLink"></div>
+			 <a href="#" id="displayLink" data-icon="search">Display Data</a></div>
 		    </div>
 		</div>
 	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
@@ -138,11 +138,21 @@ HTML FILE
 					 <label for="notes">Notes:</label>
 					    <textarea name="notes" rows="2" cols="30" id="notes" /></textarea>
 					    
-					<input type="submit" value="Submit" id="submit" data-theme="b" />
-					<input type="reset" value="Erase Fields" data-theme="c"/>
-						
-					
-				    </fieldset>
+				<div id="submitreset" data-role="fieldcontain">
+					<div id="submit-reset-buttons">
+						<div class="ui-grid-a">
+							<div>
+								<input type="submit" id="submit" value="Add Vehicle" data-theme="b" />
+							</div>
+							<div>
+								<input type="reset" id="reset" value="Erase Fields" data-theme="c"/>
+							</div>
+						</div>
+					</div>
+					<div id="edit-item-button" style="display: none;">
+						<input type="button" id="edit-item" value="Edit Item" />
+					</div>
+				     </fieldset>
 				</form>
 				
 				<!-- Display Data  -->
