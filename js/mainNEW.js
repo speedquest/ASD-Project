@@ -114,7 +114,7 @@ March 2,2012
 	var itemList = $('#list').css('display', 'none');
     
 	// when clicking editItem button
-	$('#editItem').live('click', function clickEdit() {
+	$('#edit-item').live('click', function clickEdit() {
 	    var year = $('#year').val();
 	    var manufacturer = $('#manufacturer').val();
 	    var model = $('#model').val();
@@ -150,14 +150,14 @@ March 2,2012
 	    alert("Your vehicle was not removed.");
 	}
     }
-
-function clearLocal() {
-   if (localStorage.length === 0) {
-       alert("There is no data to clear.");
-   } else {
-       localStorage.clear();
-       alert("All vehicles have been deleted");
-       window.location.reload();
-       return false;
-   }
-}
+    //  CLEAR LOCAL STORAGE 
+    function clearLocal() {
+	if (localStorage.length === 0) {
+	    alert("There is no data to clear.");
+	} else {
+	    localStorage.clear();
+	    alert("All vehicles have been deleted");
+	    window.location.reload();
+	    return false;
+	}
+     }
