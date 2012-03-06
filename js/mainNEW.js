@@ -2,8 +2,8 @@
 Nick Weil
 ASD
 March 2012
-Project 1
-March 2,2012
+Project 2
+March 8,2012
 
 */
 
@@ -161,3 +161,115 @@ March 2,2012
 	    return false;
 	}
      }
+     
+    // JSON Data WORKING
+    $('#jsonbutton').bind('click', function(){
+	$('#vehicledata').empty();
+	$('<p>').html('JSON IMPORT').appendTo('#vehicledata');
+	$.ajax({
+	url: 'xhr/data.json',
+	type: 'GET',
+	dataType: 'json',
+	success: function(response){
+	    for (var i=0, j=response.thevehicles.length; i<j; i++){
+	       var jdata = response.thevehicles[i];
+	       $(''+
+	       '<div class="vehicletitle">'+
+	       '<h3>'+ jdata.year +'</h3>'+
+	       '<p>Manufacturer:'+ jdata.manfacturer +' </p>'+
+	       '<p>Model: '+ jdata.model +'</p>'+
+	       '<p>Last Oil Change: '+ jdata.lastOilDate +'</p>'+
+	       '<p>Synthetic Oil: '+ jdata.synthetic +'</p>'+
+	       '<p>Oil Duration (miles): '+ jdata.oilDuration +'</p>'+
+	       '<p>Notes: '+ jdata.notes +'</p>'+
+	       '</div>'
+	       ).appendTo('#vehicledata');
+	       console.log(response);
+	    }
+	}
+    });
+    return false;
+    });
+    
+    // XML Data
+    $('#xmlbutton').bind('click', function(){
+    $('#vehicledata').empty();
+    $('<p>').html('XML IMPORT').appendTo('#vehicledata');
+    $.ajax({
+    url: 'xhr/data.xml',
+    type: 'GET',
+    dataType: 'xml',
+    success: function(xml){
+    $(xml).find("vehicleBlock").each(function(){
+	var year = $(this).find('year').text();
+	var manufacturer = $(this).find('manufacturer').text();
+	var model = $(this).find('model').text();
+	var lastOilDate = $(this).find('lastOilDate').text();
+	var synthetic = $(this).find('synthetic').text();
+	var oilDuration = $(this).find('oilDuration').text();
+	var notes = $(this).find('notes').text();
+	 $(''+
+    '<div class="vehicletitle">'+
+    '<h3>'+ year +'</h3>'+
+    '<p>Manufacturer: ' + manufacturer +'<p/>'+
+    '<p>Model: '+ model +'</p>'+
+    '<p>Last Oil Change: '+ lastOilDate +'</p>'+
+    '<p>Synthetic Oil: '+ synthetic +'</p>'+
+    '<p>Oil Duration (miles): '+ oilDuration +'</p>'+
+    '<p>Notes: '+ notes +'</p>'+
+    '</div>'
+    ).appendTo('#vehicledata');
+    console.log(xml);
+    });
+    }
+    });
+    return false;
+    });
+    
+    
+    //CSV Data
+    $('#csvbutton').bind('click', function(){
+    $('#vehicledata').empty();
+    $('<p>').html('CSV IMPORT').appendTo('#vehicledata');
+    $.ajax({
+	    type: "GET",
+	    url: "xhr/data.csv",
+	    dataType: "text",
+	    success: function(data) {
+	     var allTextLines = data.split(/\r\n|\n/);
+	 var headers = allTextLines[0].split(',');
+	 var lines = []; // main array
+    
+    for (var i=1; i<allTextLines.length; i++) {
+    var data = allTextLines[i].split(',');
+    if (data.length == headers.length) {
+    var vehicles = []; // blank array
+    
+    for (var j=0; j<headers.length; j++) {
+    vehicles.push(data[j]);
+    }
+    lines.push(vehicles);
+    }
+    
+    }
+    
+    for (var m=0; m<lines.length; m++){
+    var avehicle = lines[m];
+    $(''+
+    '<div class="vehicletitle">'+
+    '<h3>'+ avehicle[0] +'</h3>'+
+    '<p>Manufacturer: '+ avehicle[1] +'<p/>'+
+    '<p>Model: '+ avehicle[2] +'</p>'+
+    '<p>Last Oil Change: '+ avehicle[3] +'</p>'+
+    '<p>Synthetic Oil: '+ avehicle[4] +'</p>'+
+    '<p>Oil Duration (miles): '+ avehicle[5] +'</p>'+
+    '<p>Notes: '+ avehicle[6] +'</p>'+
+    '</div>'
+    ).appendTo('#vehicledata');
+    console.log(lines);
+    }
+	    }
+    });
+    return false;
+    });
+
