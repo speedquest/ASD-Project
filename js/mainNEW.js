@@ -8,8 +8,7 @@ March 2,2012
 */
 
 
-// Wait until the DOM is ready.
-   $(function(){
+
 
     // Save Function
     $('#submit').live('click', function saveData(id) {
@@ -151,29 +150,14 @@ March 2,2012
 	    alert("Your vehicle was not removed.");
 	}
     }
-    
-    
-    // CLEAR MY DATA!
-    
-   //Clear Local Storage
-    var clearForm = $('#clearCar');
-    
-    clearForm.on('click', function() {
-	clearLocal();
-	});
-    
-    // Clear local storage.
-    var clearLocal = function() {
-    if (localStorage.length === 0) {
-	alert("There is no data to clear");
-	} else {
-	    localStorage.clear();
-	    alert("All vehicles have been deleted");
-	    window.location.reload();
-	    }
-    return false;
-    }
 
-
-
-});
+function clearLocal() {
+   if (localStorage.length === 0) {
+       alert("There is no data to clear.");
+   } else {
+       localStorage.clear();
+       alert("All vehicles have been deleted");
+       window.location.reload();
+       return false;
+   }
+}
