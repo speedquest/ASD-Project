@@ -162,8 +162,8 @@ March 8,2012
 	}
      }
      
-    // JSON Data WORKING
-    $('#jsonbutton').bind('click', function(){
+    // JSON Data 
+    $('#jsonbutton').on('click', function(){
 	$('#vehicledata').empty();
 	$('<p>').html('JSON IMPORT').appendTo('#vehicledata');
 	$.ajax({
@@ -192,7 +192,7 @@ March 8,2012
     });
     
     // XML Data
-    $('#xmlbutton').bind('click', function(){
+    $('#xmlbutton').on('click', function(){
     $('#vehicledata').empty();
     $('<p>').html('XML IMPORT').appendTo('#vehicledata');
     $.ajax({
@@ -228,7 +228,7 @@ March 8,2012
     
     
     //CSV Data
-    $('#csvbutton').bind('click', function(){
+    $('#csvbutton').on('click', function(){
     $('#vehicledata').empty();
     $('<p>').html('CSV IMPORT').appendTo('#vehicledata');
     $.ajax({
