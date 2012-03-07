@@ -177,7 +177,7 @@ March 8,2012
      }
 
     // AJAX statements for EACH of the (3) data types: JSON, XML, CSV
-    
+  /*  
     // JSON Data 
     $('#jsonbutton').on('click', function(){
 	$('#vehicledata').empty();
@@ -242,7 +242,7 @@ March 8,2012
     return false;
     });
     
-    
+  */
     //CSV Data
     $('#csvbutton').on('click', function(){
     $('#vehicledata').empty();
