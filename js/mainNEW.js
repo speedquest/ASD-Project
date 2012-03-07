@@ -28,7 +28,6 @@ March 8,2012
 	var notes = $("#notes").val();
 	var item = [
 	year, manufacturer, model, lastOilDate, synthetic, oilDuration, notes];
-    
 	localStorage.setItem(key, item);
 	location.reload();
 	alert("Vehicle Saved!");
@@ -49,6 +48,7 @@ March 8,2012
 	}
     }
     
+    // Get Data Function
     $('#displayLink').live('click', function getData() {
 	    toggleControls("on");
 	var getListdiv = $('#list')[0];
@@ -56,7 +56,6 @@ March 8,2012
 	    var key = localStorage.key(i);
 	    var value = localStorage.getItem(key);
 	    value = value.split(',');
-    
 	    $('<div>').attr({
 		'class': 'listDiv'
 	    }).appendTo('#list');
@@ -79,13 +78,10 @@ March 8,2012
 	}
     });
     
-    
-    
     // EDIT MY DATA!!
-    
     var editItem = function (id) {
 	var itemId = id;
-	    var value = localStorage.getItem(itemId);
+	var value = localStorage.getItem(itemId);
 	    value = value.split(',');
 	    toggleControls("off");
 	var year = value[0];
@@ -103,17 +99,17 @@ March 8,2012
 	if ($('#synthetic').is(":checked")){
 	    synthetic = "Yes"
 	    }else{
-	    synthetic = "No"
+		synthetic = "No"
 	    }
 	    $('#oilDuration').val(oilDuration);
 	$('#notes').val(notes);
     
-	// show edit item button, hide submit button
+	// Show edit item button, hide submit button
 	var editButton = $('#edit-item-button').css('display', 'block');
 	var subresButtons = $('#submit-reset-buttons').css('display', 'none');
 	var itemList = $('#list').css('display', 'none');
     
-	// when clicking editItem button
+	// What happens when clicking editItem button
 	$('#edit-item').live('click', function clickEdit() {
 	    var year = $('#year').val();
 	    var manufacturer = $('#manufacturer').val();
@@ -123,13 +119,18 @@ March 8,2012
 	    if ($('#synthetic').is(":checked")){
 		    synthetic = "Yes"
 		    }else{
-		    synthetic = "No"
+			synthetic = "No"
 		    }
 	    var oilDuration = $('#oilDuration').val();
 	    var notes = $('#notes').val();
 	    var item = [
-	    year, manufacturer, model, lastOilDate, synthetic, oilDuration, notes];
-	 
+		year,
+		manufacturer,
+		model,
+		lastOilDate,
+		synthetic,
+		oilDuration,
+		notes];
 	    localStorage.setItem(itemId, item);           
 	    location.reload();
 	    alert("Vehicle Edited!");
@@ -150,6 +151,7 @@ March 8,2012
 	    alert("Your vehicle was not removed.");
 	}
     }
+    
     //  CLEAR LOCAL STORAGE 
     function clearLocal() {
 	if (localStorage.length === 0) {
@@ -175,13 +177,13 @@ March 8,2012
 	       var jdata = response.thevehicles[i];
 	       $(''+
 	       '<div class="vehicletitle">'+
-	       '<h3>'+ jdata.year +'</h3>'+
-	       '<p>Manufacturer:'+ jdata.manfacturer +' </p>'+
-	       '<p>Model: '+ jdata.model +'</p>'+
-	       '<p>Last Oil Change: '+ jdata.lastOilDate +'</p>'+
-	       '<p>Synthetic Oil: '+ jdata.synthetic +'</p>'+
-	       '<p>Oil Duration (miles): '+ jdata.oilDuration +'</p>'+
-	       '<p>Notes: '+ jdata.notes +'</p>'+
+		'<h3>'+ jdata.year +'</h3>'+
+		'<p>Manufacturer:'+ jdata.manfacturer +' </p>'+
+		'<p>Model: '+ jdata.model +'</p>'+
+		'<p>Last Oil Change: '+ jdata.lastOilDate +'</p>'+
+		'<p>Synthetic Oil: '+ jdata.synthetic +'</p>'+
+		'<p>Oil Duration (miles): '+ jdata.oilDuration +'</p>'+
+		'<p>Notes: '+ jdata.notes +'</p>'+
 	       '</div>'
 	       ).appendTo('#vehicledata');
 	       console.log(response);
