@@ -8,31 +8,43 @@ March 8,2012
 */
 
 
+    var parseVehicleData = function(data){
 
-
-    // Save Function
-    $('#submit').live('click', function saveData(id) {
-	var d = new Date();
-	var key = (d.getTime());
-	var year = $("#year").val();
-	var manufacturer = $("#manufacturer").val();
-	var model = $("#model").val();
-	var lastOilDate = $("#lastOilDate").val();
-	var synthetic;
-	if ($('#synthetic').is(":checked")){
-	    synthetic = "Yes"
-	    }else{
-	    synthetic = "No"
+	// Save Function
+	$('#submit').live('click', function saveData(id) {
+	    var d = new Date();
+	    var key = (d.getTime());
+	    var year = $("#year").val();
+	    var manufacturer = $("#manufacturer").val();
+	    var model = $("#model").val();
+	    var lastOilDate = $("#lastOilDate").val();
+	    var synthetic;
+	    if ($('#synthetic').is(":checked")){
+		synthetic = "Yes"
+		}else{
+		synthetic = "No"
+		}
+	    var oilDuration = $("#oilDuration").val();
+	    var notes = $("#notes").val();
+	    var item = [
+	    year, manufacturer, model, lastOilDate, synthetic, oilDuration, notes];
+	    localStorage.setItem(key, item);
+	    location.reload();
+	    alert("Vehicle Saved!");
+	    console.log(localStorage);
+	});	
+    
+    };
+    
+    // Validating the DATA
+    var vehicleform = $('#addPage');
+    vehicleform.validate({
+	invalidHandler: function(form, validator){},
+	submitHandler: function(){
+		var data = vehcileform.serializeArray();
+		parseVehicleData(data);
 	    }
-	var oilDuration = $("#oilDuration").val();
-	var notes = $("#notes").val();
-	var item = [
-	year, manufacturer, model, lastOilDate, synthetic, oilDuration, notes];
-	localStorage.setItem(key, item);
-	location.reload();
-	alert("Vehicle Saved!");
-	console.log(localStorage);
-    });	
+	});	
     
     var toggleControls = function (n) {
 	switch (n) {
@@ -163,7 +175,9 @@ March 8,2012
 	    return false;
 	}
      }
-     
+
+    // AJAX statements for EACH of the (3) data types: JSON, XML, CSV
+    
     // JSON Data 
     $('#jsonbutton').on('click', function(){
 	$('#vehicledata').empty();
