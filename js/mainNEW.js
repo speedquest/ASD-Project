@@ -177,7 +177,7 @@ March 8,2012
      }
 
     // AJAX statements for EACH of the (3) data types: JSON, XML, CSV
-  /*  
+    
     // JSON Data 
     $('#jsonbutton').on('click', function(){
 	$('#vehicledata').empty();
@@ -206,7 +206,7 @@ March 8,2012
     });
     return false;
     });
-    
+ 
     // XML Data
     $('#xmlbutton').on('click', function(){
     $('#vehicledata').empty();
@@ -242,24 +242,24 @@ March 8,2012
     return false;
     });
     
-  */
     //CSV Data
     $('#csvbutton').on('click', function(){
-    $('#vehicledata').empty();
-    $('<p>').html('CSV IMPORT').appendTo('#vehicledata');
-    $.ajax({
-	    type: "GET",
-	    url: "xhr/data.csv",
-	    dataType: "text",
-	    success: function(data) {
-	     var allTextLines = data.split(/\r\n|\n/);
-	 var headers = allTextLines[0].split(',');
-	 var lines = []; // main array
-    
-    for (var i=1; i<allTextLines.length; i++) {
-    var data = allTextLines[i].split(',');
-    if (data.length == headers.length) {
-    var vehicles = []; // blank array
+	//$.mobile.changePage('#vehicledata', {});
+	$('#vehicledata').empty();
+	$('<p>').html('CSV IMPORT').appendTo('#vehicledata');
+	$.ajax({
+		type: "GET",
+		url: "xhr/data.csv",
+		dataType: "text",
+		success: function(data) {
+		 var allTextLines = data.split(/\r\n|\n/);
+	     var headers = allTextLines[0].split(',');
+	     var lines = []; // main array
+	
+	for (var i=1; i<allTextLines.length; i++) {
+	var data = allTextLines[i].split(',');
+	if (data.length == headers.length) {
+	var vehicles = []; // blank array
     
     for (var j=0; j<headers.length; j++) {
     vehicles.push(data[j]);
