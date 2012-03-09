@@ -11,47 +11,55 @@ HTML FILE
 
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	
-	<title>Auto LogBook</title>
-	
-	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- Mobile IE needs ClearType for smoothing fonts -->
-	<meta http-equiv="cleartype" content="on">
-	
-	<!-- StyleSheets under here -->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-	<link rel="stylesheet" href="css/styles.css" />
-	
-	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-	<script src="js/libs/modernizr.custom.min.js"></script>
+<meta charset="utf-8">
+
+<title>Auto LogBook</title>
+
+<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Mobile IE needs ClearType for smoothing fonts -->
+<meta http-equiv="cleartype" content="on">
+
+<!-- StyleSheets under here -->
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<link rel="stylesheet" href="css/styles.css" />
+
+<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+<script src="js/libs/modernizr.custom.min.js" type="text/javascript"></script>
 </head>
 
 <body>
 	<!-- Main Page Call  -->
-	<div data-role="page" id="home">		
-		<div data-role="header" id="header" data-theme="d" data-position="center">
-			<center><img src="images/logbook_header_logo.png" ></center>
+	<div data-role="page" id="home">
+		<div data-role="header" id="header" data-theme="d"
+			data-position="center">
+			<center>
+				<img src="images/logbook_header_logo.png" alt="">
+			</center>
 		</div>
-		    <!-- Feature/CTA implementation -->
-		    <div data-role="content" align="center">
-			<a href="#addPage"><img src="images/feature.jpg" id="ctaImage"></a>
-		    </div>
+		<!-- Feature/CTA implementation -->
+		<div data-role="content" align="center">
+			<a href="#addPage"><img src="images/feature.jpg" id="ctaImage"
+				alt=""></a>
+		</div>
 		<!-- List of links to other pages, done in a 'listview' to stack them -->
 		<div>
-		    <ul data-role="listview" class="menubuttons" data-theme="b">
-			<li><a href="#inspectPage" id="inspectButton">Inspect Vehicles</a></li>
-			<li><a href="#addPage" id="addPageButton">Add Vehicles</a></li>
-			<li><a href="#oilChange" id="oilChangeButton">Oil Change Information</a></li>
-			<li><a href="#tireRotation" id="tireRotationButton">Tire Rotation Information</a></li>
-			<!-- <li><a href="#fuelmileage">Fuel Mileage Calculator</a></li> -->
-			<li><a href="#support" id="supportButton">Support</a></li>
-		    </ul>
-		    <p style="text-align: center;">TEST FOR DATA PULL</p>
+			<ul data-role="listview" class="menubuttons" data-theme="b">
+				<li><a href="importData.html" id="inspectButton">Inspect
+						Vehicles</a></li>
+				<li><a href="#addPage" id="addPageButton">Add Vehicles</a></li>
+				<li><a href="#oilChange" id="oilChangeButton">Oil Change
+						Information</a></li>
+				<li><a href="#tireRotation" id="tireRotationButton">Tire
+						Rotation Information</a></li>
+				<!-- <li><a href="#fuelmileage">Fuel Mileage Calculator</a></li> -->
+				<li><a href="#support" id="supportButton">Support</a></li>
+			</ul>
+			<p style="text-align: center;">TEST FOR DATA PULL</p>
 			<div class="ui-block-a">
 				<a href="#" data-role="button" data-theme="b" id="jsonbutton">JSON</a>
 			</div>
@@ -64,64 +72,73 @@ HTML FILE
 			<div id="vehicledata"></div>
 		</div>
 		<!-- Footer, which includes a HOME page button/icon -->
-		<div data-role="footer" id="footer" data-theme="d" data-position="fixed" align="center">
-		    <a href="#home" data-icon="home">Home</a>
+		<div data-role="footer" id="footer" data-theme="d"
+			data-position="fixed" align="center">
+			<a href="#home" data-icon="home">Home</a>
 		</div>
 	</div>
-	
+
 	<!-- INSPECT PAGE -->
 	<div data-role="page" id="inspectPage">
-	    <div data-role="header" data-position="fixed">
-		<center><img src="images/logbook_header_logo.png"></center>
-		<h1>Inspect Vehicles</h1>
-	    </div>
+		<div data-role="header" data-position="fixed">
+			<center>
+				<img src="images/logbook_header_logo.png" alt="">
+			</center>
+			<h1>Inspect Vehicles</h1>
+		</div>
 		<!-- <div data-role="content" align="center">
 			<div data-role="collapsible" >
 			    <h2>Vehicle List</h2>
 			     <a href="#" id="displayLink" data-icon="search">Display Data</a></div>
 			</div> 
 		</div> -->
-	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
-		<a href="#home" data-icon="home">Home</a>
-	    </div>
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
+			<a href="#home" data-icon="home">Home</a>
+		</div>
 
 	</div>
-	
+
 	<!-- ADD VEHICLE PAGE -->
-	<div data-role="page" id="addPage" >
-		
+	<div data-role="page" id="addPage">
+
 		<div data-role="header" data-theme="d" data-position="fixed">
-			<center><img src="images/logbook_header_logo.png" ></center>
+			<center>
+				<img src="images/logbook_header_logo.png" alt="">
+			</center>
 			<h1>Add Vehicles</h1>
 		</div>
 		<div id="errorControl">
-		    <ul id="errors"></ul>
+			<ul id="errors"></ul>
 		</div>
-                <div data-role="content" align="left">
+		<div data-role="content" align="left">
 			<div id="formControl">
 				<form action="#" method="post" id="addItem">
-				    <fieldset>
-					<h3 id="required"> * fields are required to continue </h3>
-					<!-- Text Entry  -->
-					<div data-role="fieldcontain">
-					    <label for="year"><span class="required">*</span> Car Year :</label><input type="text" id="year" placeholder="1955-2012" />
-					
-					<!--  Car Make -->
+					<fieldset>
+						<h3 id="required">* fields are required to continue</h3>
+						<!-- Text Entry  -->
 						<div data-role="fieldcontain">
-							<label for="manufacturer"></label>
-							<select name="manufacturer" id="manufacturer" class="required" data-native-menu="false">
-							    <option data-placeholder="true">Select Manufacturer</option>
-								<option value="acura">Acura</option>
-								<option value="bmw">BMW</option>
-								<option value="chevrolet">Chevrolet</option>
-								<option value="dodge">Dodge</option>
-								<option value="ford">Ford</option>
-							</select>
+							<label for="year"><span class="required">*</span> Car
+								Year :</label><input type="text" id="year" placeholder="1955-2012" />
+
+							<!--  Car Make -->
+							<div data-role="fieldcontain">
+								<label for="manufacturer"></label> <select name="manufacturer"
+									id="manufacturer" class="required" data-native-menu="false">
+									<option data-placeholder="true">Select Manufacturer</option>
+									<option value="acura">Acura</option>
+									<option value="bmw">BMW</option>
+									<option value="chevrolet">Chevrolet</option>
+									<option value="dodge">Dodge</option>
+									<option value="ford">Ford</option>
+								</select>
+							</div>
+
+							<label for="model">Car Model:</label><input type="text"
+								name="model" id="model"
+								placeholder="Mustang, Camaro, Integra, etc." />
 						</div>
-					
-					    <label for="model">Car Model:</label><input type="text" name="model" id="model" placeholder="Mustang, Camaro, Integra, etc."/>
-					</div>
-					<!--  Removing Radios for now
+						<!--  Removing Radios for now
 					<fieldset data-role="controlgroup">
 					    <legend>Engine Size:</legend>
 					    <ul class="checkbox">
@@ -130,129 +147,148 @@ HTML FILE
 						<li><input type="radio" value="8 Cyl." id="cyl8" name="engine"/><label for="cyl8">8 Cylinder</label></li> 
 					    </ul>
 					</fieldset>
-					--> 
-					<!-- Date Entry  -->
-					<label for="lastOilDate"><span class="required">*</span> Date of last Oil Change:</label>
-					    <input type="date"  id="lastOilDate" placeholder="12-20-2010"/>
+					-->
+						<!-- Date Entry  -->
+						<label for="lastOilDate"><span class="required">*</span>
+							Date of last Oil Change:</label> <input type="date" id="lastOilDate"
+							placeholder="12-20-2010" />
 
-					<!-- Oil Change Duration Slider  -->   
-					<div data-role="fieldcontain">
-						<label for="oilDuration">Oil Change Duration(miles):</label><input type="range" value="5000" min="2000" max="15000" id="oilDuration" />
+						<!-- Oil Change Duration Slider  -->
+						<div data-role="fieldcontain">
+							<label for="oilDuration">Oil Change Duration(miles):</label><input
+								type="range" value="5000" min="2000" max="15000"
+								id="oilDuration" />
 
-					<!-- Synthetic Oil Selector -->
-						<label for="synthetic">Using Synthetic Oil?</label>
-						<select data-role="slider" id="synthetic">
-						    <option value="on">Yes</option>
-						    <option value="off">No</option>
-						</select>
-					</div>
-					 <!-- Notes Box  -->
-					 <label for="notes">Notes:</label>
-					    <textarea name="notes" rows="2" cols="30" id="notes" /></textarea>
-					    
-				<div id="submitreset" data-role="fieldcontain">
-					<div id="submit-reset-buttons">
-						<div class="ui-grid-a">
-							<div>
-								<input type="submit" id="submit" value="Add Vehicle" data-theme="b" />
+							<!-- Synthetic Oil Selector -->
+							<label for="synthetic">Using Synthetic Oil?</label> <select
+								data-role="slider" id="synthetic">
+								<option value="on">Yes</option>
+								<option value="off">No</option>
+							</select>
+						</div>
+						<!-- Notes Box  -->
+						<label for="notes">Notes:</label>
+						<textarea name="notes" rows="2" cols="30" id="notes" /></textarea>
+
+						<div id="submitreset" data-role="fieldcontain">
+							<div id="submit-reset-buttons">
+								<div class="ui-grid-a">
+									<div>
+										<input type="submit" id="submit" value="Add Vehicle"
+											data-theme="b" />
+									</div>
+									<div>
+										<input type="reset" id="reset" value="Erase Fields"
+											data-theme="c" />
+									</div>
+								</div>
 							</div>
-							<div>
-								<input type="reset" id="reset" value="Erase Fields" data-theme="c"/>
+							<div id="edit-item-button" style="display: none;">
+								<input type="button" id="edit-item" value="Edit Item" />
 							</div>
 						</div>
-					</div>
-					<div id="edit-item-button" style="display: none;">
-						<input type="button" id="edit-item" value="Edit Item" />
-					</div>
-				     </fieldset>
+					</fieldset>
 				</form>
-				
+
 				<!-- Display Data  -->
 				<div>
-					<input type="button" id="displayLink" value="Display Data"/>
+					<input type="button" id="displayLink" value="Display Data" />
 				</div>
 				<div id="list"></div>
-				
+
 				<!-- Clear Local Storage -->
 				<div id="clearCar">
-					<input type="button" id="clear" onclick="clearLocal(); location.reload();" value="Clear Local Storage"/>
+					<input type="button" id="clear"
+						onclick="clearLocal(); location.reload();"
+						value="Clear Local Storage" />
 				</div>
 			</div>
 		</div>
-	
+
 		<!--  Footer Section -->
-                <div data-role="footer" data-theme="d" data-position="fixed" align="center">
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
 			<a href="#home" data-icon="home">Home</a>
-                </div>
-	</div>
-	
-	<!-- AJAX PAGE -->
-	<div data-role="page" id="vehicledata">
-	    <div data-role="header" data-position="fixed">
-		<center><img src="images/logbook_header_logo.png"></center>
-		<h1>Inspect Vehicles</h1>
-	    </div>
-		
-		
-		
-		
-	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
-		<a href="#home" data-icon="home">Home</a>
-	    </div>
-
-	</div>
-	
-	<!-- OIL CHANGE PAGE -->                
-	<div data-role="page" id="oilChange">
-	    <div data-role="header" data-theme="d" data-position="fixed">
-		<center><img src="images/logbook_header_logo.png"></center>
-		<h1>Oil Change Info</h1>
-	    </div>
-		<center><img src="images/construction.gif"></center>
-	    
-	    <!-- Footer, which includes a HOME page button/icon -->
-	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
-		<a href="#home" data-icon="home">Home</a>
-	    </div>
-	</div>
-
-	<!-- TIRE ROTATION PAGE -->                                
-	<div data-role="page" id="tireRotation">
-	    <div data-role="header" data-theme="d" data-position="fixed">
-		<center><img src="images/logbook_header_logo.png"></center>
-		<h1>Tire Rotation Info</h1>
-	    </div>
-		<center><img src="images/construction.gif"></center>
-	    
-	    
-	    <!-- Footer, which includes a HOME page button/icon -->                   
-	    <div data-role="footer" data-theme="d" data-position="fixed" align="center">
-		<a href="#home" data-icon="home">Home</a>
-	    </div>
-	</div>
-	
-	<!-- SUPPORT PAGE -->                
-	<div data-role="page" id="support">
-	    <div data-role="header" data-theme="d" data-position="fixed">
-		<center><img src="images/logbook_header_logo.png"></center>
-		<h1>Support</h1>
-	    </div>
-		<center><img src="images/construction.gif"></center>
-	    
-		<!-- Footer, which includes a HOME page button/icon -->
-		<div data-role="footer" data-theme="d" data-position="fixed" align="center">
-		    <a href="#home" data-icon="home">Home</a>
 		</div>
-	    </div>    
 	</div>
-                
+
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
+			<a href="#home" data-icon="home">Home</a>
+		</div>
+
+	</div>
+
+	<!-- OIL CHANGE PAGE -->
+	<div data-role="page" id="oilChange">
+		<div data-role="header" data-theme="d" data-position="fixed">
+			<center>
+				<img src="images/logbook_header_logo.png" alt="">
+			</center>
+			<h1>Oil Change Info</h1>
+		</div>
+		<center>
+			<img src="images/construction.gif" alt="">
+		</center>
+
+		<!-- Footer, which includes a HOME page button/icon -->
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
+			<a href="#home" data-icon="home">Home</a>
+		</div>
+	</div>
+
+	<!-- TIRE ROTATION PAGE -->
+	<div data-role="page" id="tireRotation">
+		<div data-role="header" data-theme="d" data-position="fixed">
+			<center>
+				<img src="images/logbook_header_logo.png" alt="">
+			</center>
+			<h1>Tire Rotation Info</h1>
+		</div>
+		<center>
+			<img src="images/construction.gif" alt="">
+		</center>
+
+
+		<!-- Footer, which includes a HOME page button/icon -->
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
+			<a href="#home" data-icon="home">Home</a>
+		</div>
+	</div>
+
+	<!-- SUPPORT PAGE -->
+	<div data-role="page" id="support">
+		<div data-role="header" data-theme="d" data-position="fixed">
+			<center>
+				<img src="images/logbook_header_logo.png" alt="">
+			</center>
+			<h1>Support</h1>
+		</div>
+		<center>
+			<img src="images/construction.gif" alt="">
+		</center>
+
+		<!-- Footer, which includes a HOME page button/icon -->
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
+			<a href="#home" data-icon="home">Home</a>
+		</div>
+	</div>
+	<div></div>
+
 	<!-- JavaScript under here -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-	<script src="js/libs/jquery.validate.min.js"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+		type="text/javascript"></script>
+	<script
+		src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"
+		type="text/javascript"></script>
+	<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
 	<!-- <script src="js/JSON.js"></script> -->
 	<script src="js/mainNEW.js" type="text/javascript"></script>
-	<script>getData();
-
+	<script type="text/javascript">getData();</script>
+	<script>getData();</script>
 </body>
 </html>
