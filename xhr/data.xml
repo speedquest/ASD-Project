@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rows>
-  <row val0="Year" val1="Manufacturer" val2="Model" val3="Last Oil Date" val4="Synthetic" val5="Oil Duration" val6="Notes" ></row>
-  <row val0="1999" val1="Ford" val2="Crown Victoria" val3="12-20-2011" val4="yes" val5="5000" val6="Police Car" ></row>
-  <row val0="2011" val1="Chevrolet" val2="Corvette" val3="05-20-2011" val4="yes" val5="5000" val6="Z06" ></row>
-  <row val0="1998" val1="BMW" val2="635" val3="12-04-2010" val4="yes" val5="5000" val6="Convertible" ></row>
-  <row val0="1969" val1="Chevrolet" val2="Camaro" val3="03-05-2005" val4="no" val5="3000" val6="Cherry Red" ></row>
-  <row val0="1955" val1="Chevrolet" val2="Bel Air" val3="12-25-2011" val4="no" val5="3000" val6="Show Car" ></row>
-  <row val0="2012" val1="Ford" val2="Focus" val3="03-25-2011" val4="yes" val5="5000" val6="Rally Car" ></row>
-  <row val0="2005" val1="Dodge" val2="Caravan" val3="12-01-2011" val4="yes" val5="5000" val6="Grocery Getter" ></row>
-  <row val0="1965" val1="Ford" val2="Mustang" val3="02-02-2012" val4="no" val5="3000" val6="Eleanor" ></row>
-  <row val0="1975" val1="Acura" val2="Integra" val3="03-01-2012" val4="yes" val5="5000" val6="Blue" ></row>
-  <row val0="1992" val1="Chevrolet" val2="Caprice" val3="11-01-2011" val4="yes" val5="5000" val6="Police Car" ></row>
+  <vehicle>
+    <year>1999</year>
+    <manufacturer>Ford</manufacturer>
+    <model>Crown Victoria</model>
+    <lastOilDate>12-20-11</lastOilDate>
+    <synthetic>yes</synthetic>
+    <oilDuration>5000</oilDuration>
+    <notes>Police Car</notes>
+  </vehicle>
 </rows>
