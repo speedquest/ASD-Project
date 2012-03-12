@@ -235,6 +235,7 @@ $('#csvbutton').bind('click', function(){
 		url: "xhr/data.csv",
 		dataType: "text",
 		success: function(data) {
+		    console.log(data);
 			var allTextLines = data.split(/\r\n|\n/);
 			var headers = allTextLines[0].split(',');
 			var lines = [];
