@@ -11,7 +11,7 @@ March 2,2012
 
 
     // Save Function
-    $('#submit').live('click', function saveData(id) {
+    $('#submit').live('click', function (id) {
 	var d = new Date();
 	var key = (d.getTime());
 	var year = $("#year").val();
@@ -49,7 +49,7 @@ March 2,2012
 	}
     }
     
-    $('#displayLink').live('click', function getData() {
+    $('#displayLink').live('click', function () {
 	    toggleControls("on");
 	var getListdiv = $('#list')[0];
 	for (var i = 0, j = localStorage.length; i < j; i++) {
