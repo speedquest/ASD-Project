@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rows>
-  <vehicle>
+  <vehicleSpecs>
     <year>1999</year>
     <manufacturer>Ford</manufacturer>
     <model>Crown Victoria</model>
@@ -8,5 +8,68 @@
     <synthetic>yes</synthetic>
     <oilDuration>5000</oilDuration>
     <notes>Police Car</notes>
-  </vehicle>
+  </vehicleSpecs>
+    <vehicleSpecs>
+    <year>2002</year>
+    <manufacturer>Chevrolet</manufacturer>
+    <model>Corvette</model>
+    <lastOilDate>1-25-11</lastOilDate>
+    <synthetic>yes</synthetic>
+    <oilDuration>5000</oilDuration>
+    <notes>Yellow</notes>
+  </vehicleSpecs>
+  <vehicleSpecs>
+    <year>1955</year>
+    <manufacturer>Chevrolet</manufacturer>
+    <model>Bel Air</model>
+    <lastOilDate>2-23-11</lastOilDate>
+    <synthetic>no</synthetic>
+    <oilDuration>3000</oilDuration>
+    <notes>Show Car</notes>
+  </vehicleSpecs>
+  <vehicleSpecs>
+    <year>1967</year>
+    <manufacturer>Ford</manufacturer>
+    <model>Mustang</model>
+    <lastOilDate>12-20-11</lastOilDate>
+    <synthetic>yes</synthetic>
+    <oilDuration>3000</oilDuration>
+    <notes>Fastback</notes>
+  </vehicleSpecs>
+    <vehicleSpecs>
+    <year>1970</year>
+    <manufacturer>Dodge</manufacturer>
+    <model>Charger</model>
+    <lastOilDate>12-1-01</lastOilDate>
+    <synthetic>no</synthetic>
+    <oilDuration>3000</oilDuration>
+    <notes>Beater Car</notes>
+  </vehicleSpecs>
+      <vehicleSpecs>
+    <year>2003</year>
+    <manufacturer>BMW</manufacturer>
+    <model>835</model>
+    <lastOilDate>12-20-11</lastOilDate>
+    <synthetic>yes</synthetic>
+    <oilDuration>5000</oilDuration>
+    <notes>German Car</notes>
+  </vehicleSpecs>
+  <vehicleSpecs>
+    <year>1985</year>
+    <manufacturer>Acura</manufacturer>
+    <model>Integra</model>
+    <lastOilDate>3-5-2010</lastOilDate>
+    <synthetic>yes</synthetic>
+    <oilDuration>5000</oilDuration>
+    <notes>Daily Driver</notes>
+  </vehicleSpecs>
+  <vehicleSpecs>
+    <year>1998</year>
+    <manufacturer>Ford</manufacturer>
+    <model>Taurus</model>
+    <lastOilDate>12-1-11</lastOilDate>
+    <synthetic>yes</synthetic>
+    <oilDuration>5000</oilDuration>
+    <notes>Police Car</notes>
+  </vehicleSpecs>
 </rows>
