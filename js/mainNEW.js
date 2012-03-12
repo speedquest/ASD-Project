@@ -176,7 +176,7 @@ $('#jsonbutton').bind('click', function(){
 				$(''+
 						'<div class="vehicletitle">'+
 						'<h3>'+ jdata.year +'</h3>'+
-						'<p>Manufacturer:'+ jdata.manfacturer +' </p>'+
+						'<p>Manufacturer:'+ jdata.manufacturer +' </p>'+
 						'<p>Model: '+ jdata.model +'</p>'+
 						'<p>Last Oil Change: '+ jdata.lastOilDate +'</p>'+
 						'<p>Synthetic Oil: '+ jdata.synthetic +'</p>'+
@@ -200,7 +200,7 @@ $('#xmlbutton').bind('click', function(){
 		type: 'GET',
 		dataType: 'xml',
 		success: function(xml){
-			$(xml).find("vehicleBlock").each(function(){
+			$(xml).find("vehicleSpecs").each(function(){
 				var year = $(this).find('year').text();
 				var manufacturer = $(this).find('manufacturer').text();
 				var model = $(this).find('model').text();
@@ -210,7 +210,7 @@ $('#xmlbutton').bind('click', function(){
 				var notes = $(this).find('notes').text();
 				$(''+
 						'<div class="vehicletitle">'+
-						'<h3>'+ year +'</h3>'+
+						'<p><h3>'+ year +'</h3></p>'+
 						'<p>Manufacturer: ' + manufacturer +'<p/>'+
 						'<p>Model: '+ model +'</p>'+
 						'<p>Last Oil Change: '+ lastOilDate +'</p>'+
