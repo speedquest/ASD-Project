@@ -237,20 +237,19 @@ $('#csvbutton').bind('click', function(){
 		success: function(data) {
 		    console.log(data);
 			var allTextLines = data.split(/\r\n|\n/);
-			var headers = allTextLines[0].split(',');
+			var header = allTextLines[0].split(',');
 			var lines = [];
 			for (var i=1; i<allTextLines.length; i++) {
 				var csvdata = allTextLines[i].split(',');
-				if (data.length == headers.length) {
-					var vehicles = []; 
-					for (var j=0; j<headers.length; j++) {
+				if (csvdata.length == header.length) {
+					var vehicles = [];
+					for (var j=0; j<header.length; j++) {
 						vehicles.push(csvdata[j]);
 					}
 					lines.push(vehicles);
 				}
-
 			}
-
+			console.log(data);
 			for (var m=0; m<lines.length; m++){
 				var avehicle = lines[m];
 				$(''+
