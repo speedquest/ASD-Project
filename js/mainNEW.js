@@ -253,7 +253,7 @@ $('#csvbutton').bind('click', function(){
 			for (var m=0; m<lines.length; m++){
 				var avehicle = lines[m];
 				$(''+
-						'<div class="vehicletitle">'+
+					    '<div class="vehicletitle">'+
 						'<h3>'+ avehicle[0] +'</h3>'+
 						'<p>Manufacturer: '+ avehicle[1] +'<p/>'+
 						'<p>Model: '+ avehicle[2] +'</p>'+
@@ -261,7 +261,7 @@ $('#csvbutton').bind('click', function(){
 						'<p>Synthetic Oil: '+ avehicle[4] +'</p>'+
 						'<p>Oil Duration (miles): '+ avehicle[5] +'</p>'+
 						'<p>Notes: '+ avehicle[6] +'</p>'+
-						'</div>'
+					    '</div>'
 				).appendTo('#vehicledata');
 				console.log(lines);
 			}

@@ -162,9 +162,10 @@ function clearLocal() {
 
 // CouchDB code
 
-$(document).ready(function(){
+$('#thecouchdata').live("pageshow", function(){
+	$('vehiclelist').empty();
 	$.ajax({
-		"url": "",
+		"url": "_views/recent-items/map.js",
 		"datatype": "json",
 		"success": function(data){
 			$.each(data.rows, function (index, vehicle){
@@ -175,10 +176,18 @@ $(document).ready(function(){
 				var synthetic = vehicle.value.synthetic;
 				var oilDuration = vehicle.value.oilDuration;
 				var notes = vehicle.value.notes;
-				$('#vehiclelist').append(
-						$('<li>').text(manufacturer)
-					);
+				$(''+
+					'<li class="vehicletitle">'+
+						'<h3>'+ year +'</h3>'+
+						'<li>Manufacturer: '+ manufacturer +'</li>'+
+						'<li>Model: '+ model +'</li>'+
+						'<li>Last Oil Date: '+ lastOilDate +'</li>'+
+						'<li>Synthetic: '+ synthetic +'</li>'+
+						'<li>Oil Duration: '+ oilDuration +'</li>'+
+						'<li>Notes: '+ notes +'</li>'+
+					).appendTo('#vehiclelist');
 			});
+		$('#vehiclelist').listview('refresh');
 		}
 	});
 });
