@@ -1,4 +1,3 @@
-
 function(doc) {
 	  console.log("hello");
 	  if (doc._id.substr(0,7) === "vehicle") {
