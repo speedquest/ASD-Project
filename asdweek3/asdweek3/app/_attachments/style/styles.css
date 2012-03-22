@@ -18,7 +18,11 @@ March 15, 2012
 #home, #addPage, #inspectPage, #oilChange, #tireRotation, #support, #clearCar {
     background: url(../images/deep_background.png);
 }
-
+img.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 #ctaImage {
     box-shadow: 10px 10px 5px #555;
 }

@@ -17,9 +17,9 @@ March 15,2012
 	var lastOilDate = $("#lastOilDate").val();
 	var synthetic;
 	if ($('#synthetic').is(":checked")){
-	    synthetic = "Yes"
+	    synthetic = "Yes";
 	    }else{
-	    synthetic = "No"
+	    synthetic = "No";
 	    }
 	var oilDuration = $("#oilDuration").val();
 	var notes = $("#notes").val();
@@ -44,7 +44,7 @@ March 15,2012
 	default:
 	    return false;
 	}
-    }
+    };
     
     $('#displayLink').live('click', function () {
 	    toggleControls("on");
@@ -98,9 +98,9 @@ March 15,2012
 	$('#model').val(model);
 	$('#lastOilDate').val(lastOilDate);
 	if ($('#synthetic').is(":checked")){
-	    synthetic = "Yes"
+	    synthetic = "Yes";
 	    }else{
-	    synthetic = "No"
+	    synthetic = "No";
 	    }
 	    $('#oilDuration').val(oilDuration);
 	$('#notes').val(notes);
@@ -118,9 +118,9 @@ March 15,2012
 	    var lastOilDate = $('#lastOilDate').val();
 	    var synthetic;
 	    if ($('#synthetic').is(":checked")){
-		    synthetic = "Yes"
+		    synthetic = "Yes";
 		    }else{
-		    synthetic = "No"
+		    synthetic = "No";
 		    }
 	    var oilDuration = $('#oilDuration').val();
 	    var notes = $('#notes').val();
@@ -133,7 +133,7 @@ March 15,2012
 	    
 	});
     
-    }
+    };
     
     
     // DELETE AN ITEM
@@ -146,7 +146,7 @@ March 15,2012
 	} else {
 	    alert("Your vehicle was not removed.");
 	}
-    }
+    };
 
 function clearLocal() {
    if (localStorage.length === 0) {
@@ -162,12 +162,14 @@ function clearLocal() {
 
 // CouchDB code
 
-$('#thecouchdata').live("pageshow", function(){
-	$('vehiclelist').empty();
+$('#thecouchdata').ready(function(){
+	alert("hello");
+	console.log("hello");
+	// $('vehiclelist').empty();
 	$.ajax({
-		"url": "_views/recent-items/map.js",
-		"datatype": "json",
-		"success": function(data){
+		"url": "_views/recentitems",
+		"dataType": "json",
+		"success": function(data) {
 			$.each(data.rows, function (index, vehicle){
 				var year = vehicle.value.year;
 				var manufacturer = vehicle.value.manufacturer;
@@ -176,18 +178,27 @@ $('#thecouchdata').live("pageshow", function(){
 				var synthetic = vehicle.value.synthetic;
 				var oilDuration = vehicle.value.oilDuration;
 				var notes = vehicle.value.notes;
-				$(''+
-					'<li class="vehicletitle">'+
-						'<h3>'+ year +'</h3>'+
-						'<li>Manufacturer: '+ manufacturer +'</li>'+
-						'<li>Model: '+ model +'</li>'+
-						'<li>Last Oil Date: '+ lastOilDate +'</li>'+
-						'<li>Synthetic: '+ synthetic +'</li>'+
-						'<li>Oil Duration: '+ oilDuration +'</li>'+
-						'<li>Notes: '+ notes +'</li>'+
-					).appendTo('#vehiclelist');
+				$("#thecouchdata").append(
+						$('<div>').attr ("data-role", "collapsible").attr("data-collapsed", "true" )
+						.append($('<h3>').text(model))
+						/*.append($('<p>').text("Manufacturer: " + manufacturer))
+						.append($('<p>').text("Year: " + year))
+						.append($('<p>').text("Last Oil Change Date: " + lastOilDate))
+						.append($('<p>').text("Synthetic: " + synthetic))
+						.append($('<p>').text("Oil Duration (miles): " + oilDuration))
+						.append($('<p>').text("Notes: " + notes))*/
+						);
 			});
-		$('#vehiclelist').listview('refresh');
+		// $('#vehiclelist').listview('refresh');
 		}
 	});
 });
+
+/*  WEEK 4 STUFF $('#inspectcouchdata').live("pageshow", function () {
+	$.couch.db(asdweek3).view("asdweek3", {
+		success: function(data) {
+			console.log(data);
+		}
+	}
+});
+*/
