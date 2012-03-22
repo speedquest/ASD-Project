@@ -1,5 +1,4 @@
 function(doc) {
-	  console.log("hello");
 	  if (doc._id.substr(0,7) === "vehicle") {
 	    emit(doc._id.substr(7), {
 	     "year": doc.year,
