@@ -3,8 +3,8 @@
 Nick Weil
 ASD
 March 2012
-Project 3
-March 15,2012
+Project 4
+March 23,2012
 
 HTML FILE
 -->
@@ -25,14 +25,14 @@ HTML FILE
 
 <!-- StyleSheets under here -->
 <link rel="stylesheet"
-	href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
 <link rel="stylesheet" href="style/styles.css" />
 
 <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-<script src="js/libs/modernizr.custom.min.js" type="text/javascript"></script>
+<script src="modernizr.custom.min.js" type="text/javascript"></script>
 
-<!-- WEEK 4 PUT BACK IN!!!  -->
-<!--  <script src="jquery.couch.js" type="text/javascript"></script> -->
+
+<script src="jquery.couch.js" type="text/javascript"></script>
 
 </head>
 
@@ -241,7 +241,7 @@ HTML FILE
 			<h1>Inspect Couch Vehicles</h1>
 		</div>
 		<div data-role="collapsible-set" >
-			<ul id="thecouchdata" data-role="listview" class="pulled">
+			<ul id="thecouchdata" data-role="listview">
 			</ul>
 		</div>
 		<div data-role="footer" data-theme="d" data-position="fixed"
@@ -250,9 +250,26 @@ HTML FILE
 		</div>
 	</div>
 	
-	<script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<!-- COUCH DATA WEEK 4 PAGE -->
+	<div data-role="page" data-theme="d" id="thecouchdataDisplay">
+		<div data-role="header" data-position="fixed">
+			<img src="images/logbook_header_logo.png" class="center">
+			<h1>Inspect Couch Vehicles</h1>
+		</div>
+		<div data-role="collapsible-set" >
+			<ul id="thecouchdataItems" data-role="listview">
+			</ul>
+		</div>
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
+			<a href="#home" data-icon="home">Home</a>
+		</div>
+	</div>
+	
+	<script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
-	<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
-	<script src="js/main.js"></script>
+	<script src="jquery.validate.min.js" type="text/javascript"></script>
+	<script src="jquery.couch.js" type="text/javascript"></script>
+	<script src="main.js"></script>
 </body>
 </html>
