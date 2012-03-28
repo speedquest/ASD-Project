@@ -50,8 +50,10 @@ HTML FILE
 		<!-- List of links to other pages, done in a 'listview' to stack them -->
 		<div>
 			<ul data-role="listview" class="menubuttons" data-theme="b">
-				<li><a href="#inspectcouchdata" id="inspectButton">Inspect
+				<li><a href="#displayCloudData" id="inspectButton">Inspect
 						Couch Vehicles</a></li>
+				<li><a href="#editCloudData" id="editCloudButton">Inspect
+						Cloud Vehicles</a></li>
 				<li><a href="#addPage" id="addPageButton">Add Vehicles</a></li>
 				<li><a href="#oilChange" id="oilChangeButton">Oil Change
 						Information</a></li>
@@ -154,7 +156,7 @@ HTML FILE
 									</div>
 								</div>
 							</div>
-							<div id="edit-item-button" style="display: none;">
+							<div id="editVehicleButton" style="display: none;">
 								<input type="button" id="edit-item" value="Edit Item" />
 							</div>
 						</div>
@@ -235,7 +237,7 @@ HTML FILE
 	</div>
 
 	<!-- COUCH DATA PAGE -->
-	<div data-role="page" data-theme="d" id="inspectcouchdata">
+	<div data-role="page" data-theme="d" id="displayCloudData">
 		<div data-role="header" data-position="fixed">
 			<img src="images/logbook_header_logo.png" class="center">
 			<h1>Inspect Couch Vehicles</h1>
@@ -250,8 +252,8 @@ HTML FILE
 		</div>
 	</div>
 	
-	<!-- COUCH DATA WEEK 4 PAGE -->
-	<div data-role="page" data-theme="d" id="thecouchdataDisplay">
+	<!-- CLOUD DATA WEEK 4 PAGE -->
+	<div data-role="page" data-theme="d" id="editCloudData">
 		<div data-role="header" data-position="fixed">
 			<img src="images/logbook_header_logo.png" class="center">
 			<h1>Inspect Couch Vehicles</h1>
@@ -259,6 +261,9 @@ HTML FILE
 		<div data-role="collapsible-set" >
 			<ul id="thecouchdataItems" data-role="listview">
 			</ul>
+		</div>
+		<div id="editVehicleButton" style="display: none;">
+			<input type="button" id="editVehicle" value="Edit Vehicle" />
 		</div>
 		<div data-role="footer" data-theme="d" data-position="fixed"
 			align="center">
