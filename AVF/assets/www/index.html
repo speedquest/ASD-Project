@@ -1,0 +1,113 @@
+<!doctype html>
+<!--
+Nick Weil
+AVF
+May 2012
+Project 1
+May 5, 2012
+
+HTML FILE
+-->
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Auto LogBook Landing Page</title>
+
+<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Mobile IE needs ClearType for smoothing fonts -->
+<meta http-equiv="cleartype" content="on">
+
+<!-- StyleSheets under here -->
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<link rel="stylesheet" href="../../../GitHub/mdv-projects/ASD/ASD-Project/css/styles.css" />
+
+<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+<script src="../../../GitHub/mdv-projects/ASD/ASD-Project/js/libs/modernizr.custom.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.5.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<!-- Main Page Call  -->
+<div data-role="page" id="home">
+   <p align='left'>Nick Weil</p>
+   <p>AVF 1205</p>
+		<div data-role="header" id="header" data-theme="d"
+			data-position="center">
+			<center>
+			  <p><img src="../../../GitHub/mdv-projects/ASD/ASD-Project/images/logbook_header_logo.png" alt=""></center>
+              
+            
+		</div>
+		<!-- Feature/CTA implementation -->
+		<div data-role="content" align="center"></div>
+		<!-- List of links to other pages, done in a 'listview' to stack them -->
+        
+		<div>
+			<ul data-role="listview" class="menubuttons" data-theme="c">
+				<li><a href="https://speedquest.cloudant.com/asdweek3/_design/asdweek3/index.html" id="originalAppButton">Original CRUD app</a></li>
+				<li><a href="#" id="revisedAppButton">Revised CRUD app</a></li>
+				<li><a href="nativeFeatures.html" id="nativeFeaturesButton">iOS/Android Native Features</a>
+				  <ul data-role="listview" data-theme="d">
+				    <li><a href="#">Geolocation</a></li>
+				    <li><a href="#">Camera</a></li>
+				    <li><a href="#">Alert Notification</a></li>
+			      </ul>
+				</li>
+				<li><a href="#" id="researchButton">Research
+				  <ul data-role="listview">
+				    <li><a href="http://course.online.fullsail.edu/index.cfm?fuseaction=lms.activitiesDiscussion&activityId=719001&deliveryId=1443739">Week 1 Discussion Post</a></li>
+				    <li><a href="#">Week 2 Discussion Post</a></li>
+				    <li><a href="#">Week 3 Discussion Post</a></li>
+				    <li><a href="#">Week 4 Discussion Post</a></li>
+				    <li><a href="#videoPage">Week 2 Video Page</a></li>
+				    
+			      </ul>
+				</li>
+
+			</ul>
+        </div>
+</div>
+
+<!-- VIDEO PAGE -->
+	<div data-role="videoPage" id="videoPage">
+		<div data-role="header" data-position="fixed">
+			<center>
+				<img src="images/logbook_header_logo.png" alt="">
+			</center>
+			<h1>Video</h1>
+		</div>
+			<div data-role="content" align="center">
+				<video width="320" height="240" poster="teaser.jpg" audio="muted">
+					<source src"example.mp4" type='video/mp4;
+						codecs="avc1.42E01E, mp4a.40.2"'>
+					<source src="example.webm" type='video/webm;
+						codecs="vp8, vorbis"'>
+					<source src ="example.ogv" type='video/ogg;
+						codecs="theora, vorbis"'>
+				</video>
+			</div>
+		<div data-role="footer" data-theme="d" data-position="fixed"
+			align="center">
+			<a href="#home" data-icon="home">Home</a>
+		</div>
+	<!-- JavaScript under here -->
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+		type="text/javascript"></script>
+	<script
+		src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"
+		type="text/javascript"></script>
+	<script src="../../../GitHub/mdv-projects/ASD/ASD-Project/js/libs/jquery.validate.min.js" type="text/javascript"></script>
+	<!-- <script src="js/JSON.js"></script> -->
+	<script src="../../../GitHub/mdv-projects/ASD/ASD-Project/js/mainNEW.js" type="text/javascript"></script>
+<script type="text/javascript"></script>
+</body>
+</html>
